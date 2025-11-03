@@ -14,4 +14,11 @@ describe('themeSlice', () => {
 
     expect(nextState.mode).toBe('light');
   });
+
+  it('should return the same state for unknown actions', () => {
+    const state = { mode: 'light' };
+    const nextState = themeReducer(state, { type: 'unknown' });
+
+    expect(nextState.mode).toEqual(state.mode);
+  });
 });

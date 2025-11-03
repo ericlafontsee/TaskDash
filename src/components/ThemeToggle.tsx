@@ -1,14 +1,15 @@
 import { useAppDispatch, useAppSelector } from '../app/store';
 import { toggleMode } from '../features/theme/themeSlice';
+import { Button, Typography } from '@mui/material';
 
 function ThemeToggle() {
   const dispatch = useAppDispatch();
   const mode = useAppSelector((state) => state.theme.mode);
 
   return (
-    <button onClick={() => dispatch(toggleMode())}>
-      Switch to {mode === 'light' ? 'dark' : 'light'} mode
-    </button>
+    <Button variant="contained"onClick={() => dispatch(toggleMode())}>
+      <Typography>Switch to {mode === 'light' ? 'dark' : 'light'} mode</Typography>
+    </Button>
   );
 }
 
