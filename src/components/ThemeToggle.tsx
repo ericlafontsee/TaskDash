@@ -7,7 +7,7 @@ function ThemeToggle() {
   const mode = useAppSelector((state) => state.theme.mode);
 
   return (
-    <Button variant="contained"onClick={() => dispatch(toggleMode())}>
+    <Button variant="contained" color="secondary" onClick={() => dispatch(toggleMode())}>
       <Typography>Switch to {mode === 'light' ? 'dark' : 'light'} mode</Typography>
     </Button>
   );
